@@ -1,19 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 int main(){
 	
-	//srand(time(NULL));
+	srand(time(NULL));
 	
 	char respuesta;
-	int valor = 0, minimo = 0, maximo = 100;
+	int valor = 0, valor1 = 0, minimo = 10, maximo = 14;
 	
-	//valor = minimo + rand() / (RAND_MAX / (maximo - minimo + 1 ) + 1);
+	valor = minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
+	valor1 = minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
 	
 	printf("Quieres otra carta? S/N \n");
 	scanf("%c", &respuesta);
 	
-	printf("\nSeleccion: %c", respuesta);
+	printf("\nSeleccion: %c \n", respuesta);
+	
+	if(valor > 10){
+		switch(valor){
+			case 11:
+				carta1:'J'
+			case 12:
+				carta1:'Q'
+			case 11:
+				carta1:'K'
+		}
+	}
+	
+	
 	
 	return 0;
 }
