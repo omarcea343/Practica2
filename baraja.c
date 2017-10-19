@@ -1,13 +1,4 @@
-/*
-	Baraja en Lenguaje C
-	- Crear mazo de juego
-	- Barajear Mazo
-	- Tener 1 Carta
-	- Contar Cartas (Con fines Estadisticos)
-	
-	Twitter @albertobsd
-	Web: http://CodigoEnC.com
- */
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -80,7 +71,7 @@ void barajear_mazo()	{
 		if(mazo[r] != '\0')	{
 			barajeado[i] = mazo[r];
 			mazo[r] = 0;
-			i++;	
+			i++;
 		}
 	}
 	free(mazo);
