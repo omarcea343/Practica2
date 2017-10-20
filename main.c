@@ -6,50 +6,50 @@ int main(){
 	
 	srand(time(NULL));
 	
-	char respuesta;
-	char carta1 = ' ';
-	int carta2 = 0;
-	int minimo = 10, maximo = 14;
-	
-	int valor1 = minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
-	int valor2 = minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
-	
-	if(valor1 > 10){
-		switch(valor1){
-			case 11:
-				carta1 = 'J';
-			case 12:
-				carta1 = 'Q';
-			case 13:
-				carta1 = 'K';
-			case 14:
-				carta1 = 'A';
+	char respuesta, carta1 = ' ', carta2 = ' ', carta3_extra = ' ';
+	int tipo[13] = {2,3,4,5,6,7,8,9,10,11,12,12,14};
+	int deck[52];
+	int i = 0,j = 0,k = 0, min = 0, max = 51, az = 0, valor1, valor2, carta3 = 0;
+	//Llenar el deck
+	for(i = 0; i<4; i++){
+		for(j = 0; j < 13; j++){
+			deck[k] = tipo[j];
 		}
 	}
-	if(valor2 < 10){
-		carta2 = carta2 + valor2;
-	}
-	printf("Tus cartas son: %c y %d \n", carta1, carta2);
-	
-	printf("Quieres otra carta? S/N \n");
-	scanf("%c", &respuesta);
-	
-	printf("\nSeleccion: %c \n", respuesta);
-	
-	
-	
-	
-	int i,j;
-	//Tipo de Carta
-	char tipo[4][9] = {"Corazones", "Diamantes", "Trebol", "Picas"};
-	//Valor de Carta
-	char valor[13][6] = {"Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Jack", "Queen", "King", "Az"};
-	//Ciclo para eligir carta
-	for(i = 1; i <= 13; i++){
-		for(j = 1; j <= 4; j++){
-			printf("Carta: %s de %s \n", valor[i], tipo[j]);
+	//Imprir Deck
+	for(i = 0;i < 52; i++){
+		printf("%d ", deck[i]);
+		if (deck[i] == 14){
+			printf("\n");
 		}
 	}
+	//Obtener Valores Aleatorios
+	int random1 = min + rand() / (RAND_MAX / (max - min + 1) + 1);
+	int random2 = min + rand() / (RAND_MAX / (max - min + 1) + 1);
+	int random3 = 0;
+	//Asignar cartas del deck aleatoriamente
+	valor1 = deck[random1];
+	valor2 = deck[random2];	
+	//Marcar como usada la carta
+	deck[random1] = 0;
+	deck[random2] = 0;	
+	
+	if(){
+		
+	}
+	
+	printf("");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	return 0;
